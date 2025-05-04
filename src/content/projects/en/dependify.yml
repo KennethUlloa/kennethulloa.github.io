@@ -1,0 +1,9 @@
+id: dependify
+title: Dependify
+image: https://github.com/KennethUlloa/dependify/raw/main/images/dependify.svg
+description: <span>Python</span> dependency management library using functions and decorators for registration and subsequent injection.
+links:
+  - name: PyPI
+    url: https://pypi.org/project/dependify
+  - name: GitHub
+    url: https://github.com/KennethUlloa/dependify

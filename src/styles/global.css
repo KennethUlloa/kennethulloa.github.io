@@ -1,0 +1,119 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+@theme {
+    --color-darkerblue: #17202E;
+    --color-aqua-self: #00F0FF;
+    --color-cyanide: #00A3FF;
+}
+
+@font-face {
+    font-family: Quicksand;
+    src: url('/fonts/Quicksand-VariableFont_wght.ttf');
+}
+
+:root {
+    font-family: Quicksand, Arial, Helvetica, sans-serif;
+}
+
+body {
+    @apply bg-darkerblue px-10 md:px-56 relative min-h-fit;
+}
+
+.icon {
+    width: 1.1em !important;
+    height: 1.1em !important;
+    line-height: 1.2em;
+}
+
+.icon svg {
+    width: 1em !important;
+    height: 1em !important;
+    color: inherit;
+    fill: currentColor;
+}
+
+.svg-hover svg {
+    scale: 0.8;
+    transition: .2s scale, .3s filter;
+}
+
+.svg-hover:hover svg {
+    --color: 255, 255, 255;
+    scale: 1;
+    filter: drop-shadow(0 0 0.5rem rgba(var(--color), 0.5) );
+}
+
+.icon svg * {
+    color: inherit;
+    fill: currentColor;
+}
+
+.marked span {
+    @apply text-aqua-self;
+}
+
+.dot-panel {
+    display: flex;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+}
+
+.dot {
+    --color: red;
+    --y-start: 0;
+    --x-start: 0;
+    --y-offset: var(--y-start);
+    --x-offset: var(--x-start);
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--color) 0%, rgba(1,0,0,0) 60%);
+    color: transparent;
+    animation: dot 5s infinite alternate ease-in-out;
+}
+
+.aqua {
+    --color: #00F0FF;
+}
+
+.cyanide {
+    --color: #00A3FF;
+}
+
+.link {
+    transition: scale .1s ease-in, filter .1s ease-in-out;
+}
+
+.link:hover {
+    --color: #59f4ff;
+    filter: drop-shadow(0 0 4px #00F0FF);
+    scale: 1.1;
+}
+
+@keyframes dot {
+    
+    0% {
+        transform: translate(var(--x-start), var(--y-start));
+    }
+    100% {
+        transform: translate(var(--x-offset), var(--y-offset));
+    }
+}
+
+@media (max-width: 450px) {
+    :root {
+        font-size: 12px;
+    }
+}
+
+.btn.disabled i {
+    display: none;
+}

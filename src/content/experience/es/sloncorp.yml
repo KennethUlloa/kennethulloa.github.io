@@ -1,0 +1,6 @@
+companyName: SlonCorp
+role: Desarrollador
+activities:
+ - Desarrollo backend & frontend con <span>Javascript</span>
+ - Desarrollo personalizado en <span>Salesforce</span> (Apex, LWC, Visualforce, etc.)
+startDate: 2024-12-01

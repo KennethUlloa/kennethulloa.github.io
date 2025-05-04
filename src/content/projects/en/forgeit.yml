@@ -1,0 +1,9 @@
+id: forgeit
+title: Forgeit
+image: https://kennethulloa.github.io/forgeit-assets/forgeit.png
+description: <span>Python</span> library to reduce time with boilerplate code using automatic creation of a project's structure. Features incremental structure creation so the developer can decide when to use certain parts of a template.
+links:
+  - name: PyPI
+    url: https://pypi.org/project/forgeit
+  - name: GitHub
+    url: https://github.com/KennethUlloa/forgeit

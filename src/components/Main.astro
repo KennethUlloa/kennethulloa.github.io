@@ -1,0 +1,55 @@
+---
+import "@/styles/global.css";
+import Presentation from "@/components/Presentation.astro";
+import Experience from "@/components/Experience.astro";
+import Layout from "@/layouts/Layout.astro";
+import AboutMe from "@/components/AboutMe.astro";
+import Projects from "@/components/Projects.astro";
+import TechStack from "@/components/TechStack.astro";
+import Skills from "@/components/Skills.astro";
+import { useTranslations } from "@/i18n/utils";
+import { languages, defaultLang } from "@/i18n/ui";
+import LangPicker from "./LangPicker.astro";
+const currentLang = (Astro.currentLocale ||
+  defaultLang) as keyof typeof languages;
+
+const t = useTranslations(currentLang);
+---
+
+<Layout>
+  <LangPicker lang={currentLang} />
+  <div
+    class="absolute w-full top-0 left-0 right-0 bottom-0 overflow-hidden -z-10"
+  >
+    <div
+      class="dot opacity-35 cyanide"
+      style="font-size: 96rem; left: 50%; top: -32rem; --x-start: -50%"
+    >
+      0
+    </div>
+    <div
+      class="dot opacity-15 aqua"
+      style="font-size: 74rem; left: 14rem; top: 18rem; --x-start: -50%"
+    >
+      0
+    </div>
+    <div
+      class="dot opacity-15 aqua"
+      style="font-size: 74rem; left: 75%;top: 48rem; --x-start: -50%"
+    >
+      0
+    </div>
+    <div
+      class="dot opacity-15 cyanide"
+      style="font-size: 160rem; left: 50%; top: 64rem; --x-start: -50%"
+    >
+      0
+    </div>
+  </div>
+  <Presentation t={t} lang={currentLang} />
+  <AboutMe t={t} lang={currentLang} />
+  <Experience t={t} lang={currentLang} />
+  <Projects t={t} lang={currentLang} />
+  <TechStack t={t} lang={currentLang} />
+  <Skills t={t} lang={currentLang} />
+</Layout>

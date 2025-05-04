@@ -1,0 +1,10 @@
+name: Kenneth Ulloa
+image: /img/profile.png
+email: ulloakenneth@gmail.com
+links:
+  - name: GitHub
+    url: https://github.com/KennethUlloa
+    icon: github
+  - name: LinkedIn
+    url: https://www.linkedin.com/in/kennethulloa/
+    icon: linkedin

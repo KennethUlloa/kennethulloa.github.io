@@ -1,0 +1,39 @@
+---
+import { languages } from "@/i18n/ui";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import ChevronDown from "@/assets/icons/chevron-down.svg";
+
+const { lang } = Astro.props;
+const currentLang = languages[lang as keyof typeof languages];
+---
+
+<section class="absolute top-5 right-5 text-white">
+  <div class="flex gap-2 items-center p-2">
+    <span>{currentLang}</span>
+    <button id="lang-selector-btn" class="icon btn cursor-pointer"><ChevronDown class="text-white text-md"/></button>
+  </div>
+  <div id="lang-options-combobox" class="bg-black/25 rounded-2xl p-2 collapse">
+    <ul>
+      {
+        Object.entries(languages).map(([key, val]) => {
+          return (
+            <li class="px-3 py-1 link">
+              <a href={getRelativeLocaleUrl(key, `/`)}>{val}</a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+  <script>
+    const btn = document.querySelector("#lang-selector-btn");
+    const combobox = document.querySelector("#lang-options-combobox");
+    let collapsed = combobox?.classList.contains("collapse");
+    btn?.addEventListener("click", () => {
+      if (combobox) {
+        collapsed = !collapsed;
+        combobox.classList.toggle("collapse", collapsed);
+      }
+    });
+  </script>
+</section>

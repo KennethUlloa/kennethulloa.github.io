@@ -1,0 +1,8 @@
+title: Forgeit
+image: https://kennethulloa.github.io/forgeit-assets/forgeit.png
+description: Librería de <span>Python</span> para reducir el tiempo utilizado con el "boilerplate" de un proyecto. Simplifica la creación incremental de la estructura de un proyecto, para que el desarrollador pueda decidir cuando utilizar ciertas partes de una plantilla.
+links:
+  - name: PyPI
+    url: https://pypi.org/project/forgeit
+  - name: GitHub
+    url: https://github.com/KennethUlloa/forgeit

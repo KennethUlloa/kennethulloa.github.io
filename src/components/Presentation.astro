@@ -1,0 +1,49 @@
+---
+import { loadMultipleSvg } from "@/utils/loadImage";
+import { getPersonalInfo, getGlobalInfo } from "@/content/utils";
+import Check from "@/assets/icons/circle-check.svg?raw";
+import EmailButton from "./react/EmailButton";
+
+const {t, lang } = Astro.props
+const globalInfo = await getGlobalInfo();
+const user = await getPersonalInfo(lang);
+const { name, image, links, email } = globalInfo;
+const { title } = user;
+
+const icons = await loadMultipleSvg(
+  links.map((link: any) => ({
+    id: link.icon,
+    path: `../assets/icons/${link.icon}.svg`,
+  }))
+);
+
+const encodedEmail = btoa(email);
+
+---
+
+<section class="w-full py-28 flex flex-col justify-center items-center">
+  <img
+    src={image}
+    alt=""
+    alt={name}
+    class="rounded-full w-[12rem] h-[12rem] mb-5"
+  />
+  <h1 class="text-white text-5xl mb-3">
+    {name}
+  </h1>
+  <h2 class="text-white text-2xl mb-3">{title}</h2>
+  <div class="flex gap-5 items-center p-1">
+    {
+      links.map((link: any) => {
+        const Icon = icons[link.icon];
+        return (
+        <a href={link.url} target="_blank">
+          <i class="icon text-6xl svg-hover text-white">
+            <Icon />
+          </i>
+        </a>
+      )})
+    }
+    <EmailButton client:load encodedEmail={encodedEmail} baseMessage={t("copyEmailMessage")} successMessage={t("copyEmailSuccessMessage")} Icon={Check} />
+  </div>
+</section>

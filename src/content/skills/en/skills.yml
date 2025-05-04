@@ -1,0 +1,18 @@
+- id: ux
+  name: UI/UX Design
+  description: Experience in <span>Figma</span>, <span>Inkscape</span> and <span>Photoshop</span> for web, desktop and mobile design.
+- id: backend
+  name: Backend
+  description: API and RESTful services development using <span>FastAPI</span>, <span>Flask</span> and <span>Node.js</span>. Database management <span>SQL</span> and <span>NoSQL</span>. Communication using <span>RabbitMQ</span> queues.
+- id: frontend
+  name: Frontend
+  description: User interface development with <span>HTML</span>, <span>CSS</span>, <span>JavaScript</span> and <span>ReactJS</span> framework.
+- id: architecture
+  name: Software architecture
+  description: Application of architecture patterns such as <span>MVC</span>, <span>N-Tiers</span> or <span>DDD</span> and architecture styles such as <span>Microservices</span> or <span>Monoliths</span>.
+- id: english
+  name: English
+  description: Advanced English writing and speaking.
+- id: autodidactic
+  name: Autodidactic learning
+  description: Ability to self-learn through research, experimentation, and problem-solving to create innovative solutions.

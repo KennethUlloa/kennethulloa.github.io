@@ -1,0 +1,12 @@
+---
+import { getPersonalInfo } from "@/content/utils";
+
+const { t, lang } = Astro.props;
+const personalInfo = await getPersonalInfo(lang);
+const { about } = personalInfo;
+
+---
+<section class="w-full py-24 flex flex-col justify-center items-center text-white">
+    <h2 class="font-bold mb-10 text-center text-3xl">{t("about")}</h2>
+    <p class="text-white text-2xl marked text-center" set:html={about}></p>
+</section>
